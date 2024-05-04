@@ -8,6 +8,7 @@ import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary() {
     let cartSummaryHTML = '';
+    console.log(cart)
 
     cart.forEach((cartItem) => {
         const productId = cartItem.productId;
@@ -116,6 +117,7 @@ export function renderOrderSummary() {
             removeFromCart(productId)
             const container = document.querySelector(`.js-cart-item-container-${productId}`)
             container.remove()
+            renderOrderSummary()
             renderPaymentSummary()
             updateNumOfItems()
         })

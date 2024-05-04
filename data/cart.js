@@ -20,7 +20,6 @@ function saveToStore() {
 export function addToCart(productId) {
     const quantityElement = document.querySelector(`.js-select-selector-${productId}`)
     const quantityValue = Number(quantityElement.value)
-    console.log(quantityElement.value)
     let matchingItem;
 
     cart.forEach((item) => {
@@ -34,7 +33,8 @@ export function addToCart(productId) {
     } else {
         cart.push({
             productId: productId,
-            quantity: quantityValue
+            quantity: quantityValue,
+            deliveryOptionId: 1
             })
     }
     saveToStore()
