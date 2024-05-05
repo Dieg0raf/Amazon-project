@@ -8,7 +8,6 @@ import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary() {
     let cartSummaryHTML = '';
-    console.log(cart)
 
     cart.forEach((cartItem) => {
         const productId = cartItem.productId;
@@ -41,7 +40,7 @@ export function renderOrderSummary() {
                 ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                $${formatCurrency(matchingProduct.priceCents)}
+                ${matchingProduct.getPrice()}
                 </div>
                 <div class="product-quantity">
                 <span>
